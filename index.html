@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Justice Du GrandPanameRP</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="logo2.jpg" alt="Logo de la Justice">
+        </div>
+        <h1>Bienvenue sur le site de la Justice Du GrandPanameRP</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="#" onclick="showSection('home')">Accueil</a></li>
+            <li><a href="#" onclick="showSection('about')">À propos</a></li>
+            <li><a href="#" onclick="showSection('contact')">Contact</a></li>
+            <li><a href="#" onclick="showSection('casier')">Casier Judiciaire</a></li>
+            <li class="right"><a href="#" id="registerOption" onclick="showSection('register')">Créer un compte</a></li>
+            <li class="right"><a href="#" id="loginOption">Connexion</a></li>
+        </ul>
+        <div id="statusIndicator" class="status-indicator offline"></div>
+    </nav>    
+    <main>
+        <section id="home" class="content-section">
+            <h2>Accueil</h2>
+            <img src="logo3.jpg" alt="Image de Justice" class="main-image">
+            <p>Bienvenue sur la page d'accueil. Découvrez les services de justice du GrandPanameRP.</p>
+        </section>
+        <section id="about" class="content-section" style="display: none;">
+            <h2>À propos</h2>
+            <p>Créé par Fisolu.</p>
+        </section>
+        <section id="contact" class="content-section" style="display: none;">
+            <h2>Contact</h2>
+            <p>Rejoignez via le lien : <a href="https://discord.gg/YSrt8Mxm9x">Discord</a></p>
+        </section>
+        <section id="casier" class="content-section" style="display: none;">
+            <h2>Casier Judiciaire</h2>
+            <div id="imageContainer"></div> <!-- Conteneur pour afficher les images -->
+        </section>
+        <section id="register" class="content-section" style="display: none;">
+            <h2>Inscription</h2>
+            <form id="registerForm">
+                <label for="regUsername">Nom d'utilisateur:</label>
+                <input type="text" id="regUsername" name="regUsername" required>
+                <br>
+                <label for="regPassword">Mot de passe:</label>
+                <input type="password" id="regPassword" name="regPassword" required>
+                <br>
+                <label for="regEmail">Email:</label>
+                <input type="email" id="regEmail" name="regEmail" required>
+                <br>
+                <button type="submit">S'inscrire</button>
+                <p id="registerMessage"></p>
+            </form>
+        </section>
+        <section id="login" class="content-section" style="display: none;">
+            <h2>Connexion</h2>
+            <form id="loginForm">
+                <label for="username">Nom d'utilisateur:</label>
+                <input type="text" id="username" name="username" required>
+                <br>
+                <label for="password">Mot de passe:</label>
+                <input type="password" id="password" name="password" required>
+                <br>
+                <button type="submit">Se connecter</button>
+                <p id="loginMessage"></p>
+            </form>
+        </section>
+        <section id="admin" class="content-section" style="display: none;">
+            <h2>Administration</h2>
+            <p id="welcomeMessage">Bienvenue. Vous pouvez maintenant gérer les casiers judiciaires et les utilisateurs.</p>
+            
+            <!-- Interface de gestion des inscriptions -->
+            <h3>Inscriptions en attente</h3>
+            <div id="pendingRegistrations"></div>
+        
+            <!-- Interface de gestion des utilisateurs -->
+            <h3 id="userManagementSection" style="display: none;">Gérer les utilisateurs</h3>
+            <div id="userManagement" style="display: none;"></div>
+        
+            <!-- Interface de téléchargement d'image -->
+            <h3>Télécharger une image</h3>
+            <form id="imageForm">
+                <label for="imageTitle">Titre de l'image:</label>
+                <input type="text" id="imageTitle" name="imageTitle" required>
+                <br>
+                <input type="file" id="imageInput" accept="image/*" required>
+                <br>
+                <button type="submit">Télécharger l'image</button>
+                <p id="uploadMessage"></p>
+            </form>
+            <button onclick="logout()">Déconnexion</button>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; Par Fisolu</p>
+        <div class="logo-footer">
+            <img src="logo1.png" alt="Logo de la Justice">
+        </div>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
